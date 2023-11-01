@@ -57,7 +57,7 @@
 			<!-- {#each Array(8) as _, index (index)} -->
 				<div class="">
 					<Video size="w-[300px]" src={undefined} />
-					<p>{index}</p>
+					<p>{i}</p>
 				</div>
 			{/each}
 		</div>
