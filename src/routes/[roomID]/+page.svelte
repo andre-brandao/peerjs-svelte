@@ -16,7 +16,7 @@
 	let peerStore: ReturnType<typeof createPeerStore> | undefined;
 	async function getUserMedia() {
 		return await navigator.mediaDevices.getUserMedia({
-			video: true,
+			video: { width: { ideal: 640 }, height: { ideal: 480 } },
 			audio: true
 		});
 	}
