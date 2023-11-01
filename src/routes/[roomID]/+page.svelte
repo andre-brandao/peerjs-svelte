@@ -53,8 +53,8 @@
 		<div
 			class="grid grid-cols-[repeat(auto-fill,minmax(350px,400px))] mx-auto gap-3 justify-items-center"
 		>
-			<!-- {#each $peerStore?.peers ?? [] as mediaStream, i (mediaStream)} -->
-			{#each Array(8) as _, index (index)}
+			{#each $peerStore?.peers ?? [] as mediaStream, i (mediaStream)}
+			<!-- {#each Array(8) as _, index (index)} -->
 				<div class="">
 					<Video size="w-[300px]" src={undefined} />
 					<p>{index}</p>
