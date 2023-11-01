@@ -56,7 +56,7 @@
 			{#each $peerStore?.peers ?? [] as mediaStream, i (mediaStream)}
 			<!-- {#each Array(8) as _, index (index)} -->
 				<div class="">
-					<Video size="w-[300px]" src={undefined} />
+					<Video size="w-[300px]" src={mediaStream} />
 					<p>{i}</p>
 				</div>
 			{/each}
