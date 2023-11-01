@@ -67,7 +67,7 @@
 	<div class=" rounded-lg card-hover bg-primary-500">
 		{#if vidioON}
 			<!-- content here -->
-			<Video muted={true} src={localStream} />
+			<Video size={'h-[200px]'} muted={true} src={localStream} />
 		{/if}
 		<div class="justify-around flex-row flex my-4">
 			<button
