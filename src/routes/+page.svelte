@@ -11,12 +11,16 @@
 				name += characters.charAt(Math.floor(Math.random() * characters.length));
 			}
 		}
-		goto(`/${name}`);
+		goto(`/1/${name}`);
 	}
 	let but;
 </script>
 
-<div class="center">
+<div class="center flex gap-2">
+
+	<a class="btn variant-outline-tertiary" href="/autenticado">Logar na Plataforma</a>
+
+
 	<input
 		class="input w-40 border rounded-md px-4 py-2"
 		bind:value={name}
@@ -26,7 +30,7 @@
 			console.log(e.key);
 			if (e.key === 'Enter') {
 				redrectUser();
-				goto(`/${name}`);
+				goto(`/1/${name}`);
 			}
 		}}
 	/>

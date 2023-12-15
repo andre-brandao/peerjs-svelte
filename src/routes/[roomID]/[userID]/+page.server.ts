@@ -4,19 +4,19 @@ import type { PageServerLoad } from './$types';
 const connected = new Set<string>();
 
 export const load = (async ({ params }) => {
-	const roomID = params.roomID;
+	const userID = params.userID;
 	console.log(connected);
-	connected.add(roomID);
+	connected.add(userID);
 
-	return { roomID, connected };
+	return { userID, connected };
 }) satisfies PageServerLoad;
 
 export const actions: Actions = {
 	leave: async ({ params }) => {
-		const roomID = params.roomID;
-		if (roomID) {
-			connected.delete(roomID);
+		const userID = params.userID;
+		if (userID) {
+			connected.delete(userID);
 		}
-		return { roomID, connected };
+		return { userID, connected };
 	}
 };

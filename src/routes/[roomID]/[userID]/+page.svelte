@@ -11,6 +11,7 @@
 	import { quintOut } from 'svelte/easing';
 
 	export let data: PageData;
+	
 	let localStream: MediaStream | undefined;
 
 	let peerStore: ReturnType<typeof createPeerStore> | undefined;
@@ -23,7 +24,7 @@
 	onMount(async () => {
 		// add 2 media streams to test
 		localStream = await getUserMedia();
-		peerStore = createPeerStore($page.params.roomID, localStream, data.connections);
+		peerStore = createPeerStore($page.params.userID, localStream, data.connections);
 		console.log();
 		// peerStore.callPeer();
 		console.log(data.connections);
