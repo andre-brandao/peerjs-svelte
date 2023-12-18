@@ -20,6 +20,9 @@ dependencies:
   peerjs:
     specifier: ^1.5.1
     version: 1.5.1
+  qrious:
+    specifier: ^4.0.2
+    version: 4.0.2
 
 devDependencies:
   '@skeletonlabs/skeleton':
@@ -2060,6 +2063,10 @@ packages:
       postcss: 8.4.31
       postcss-selector-parser: 6.0.13
     dev: true
+
+  /qrious@4.0.2:
+    resolution: {integrity: sha512-xWPJIrK1zu5Ypn898fBp8RHkT/9ibquV2Kv24S/JY9VYEhMBMKur1gHVsOiNUh7PHP9uCgejjpZUHUIXXKoU/g==}
+    dev: false
 
   /queue-microtask@1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}

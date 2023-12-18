@@ -1,5 +1,7 @@
-<script>
+<script lang="ts">
+
 	import { goto } from '$app/navigation';
+	import { page } from '$app/stores';
 
 	let name = '';
 
@@ -11,22 +13,14 @@
 				name += characters.charAt(Math.floor(Math.random() * characters.length));
 			}
 		}
-		goto(`/1/${name}`);
+		goto(`/${$page.params.roomID}/${name}`);
 	}
-
-
-	let randomNumber = Math.floor(Math.random() * 10000);
 	let but;
 </script>
 
 <div class="center flex gap-2">
 
-	<a class="btn variant-outline-tertiary" href="/autenticado">Logar na Plataforma</a>
 
-
-	<a class="btn variant-outline-tertiary" href="/{randomNumber}">Criar Reuniao Anonima </a>
-
-<!-- 
 	<input
 		class="input w-40 border rounded-md px-4 py-2"
 		bind:value={name}
@@ -36,7 +30,7 @@
 			console.log(e.key);
 			if (e.key === 'Enter') {
 				redrectUser();
-				goto(`/1/${name}`);
+				// goto(`/1/${name}`);
 			}
 		}}
 	/>
@@ -46,7 +40,7 @@
 		on:click={() => {
 			redrectUser();
 		}}>JoinCall</button
-	> -->
+	>
 </div>
 
 <style>

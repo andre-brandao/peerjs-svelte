@@ -45,11 +45,12 @@
 </script>
 
 <main class="text-center h-screen flex justify-center items-center">
-	<div class="flex flex-col gap-2">
+	<form method="post" action="/auth?/login" class="flex flex-col gap-2">
 		<p>Email</p>
-		<input type="text" class="input" bind:value={email} />
+		<input type="text" name="email" class="input" bind:value={email} />
 		<p>Senha</p>
-		<input type="password" class="input" bind:value={password} />
-		<button class="btn variant-glass-secondary shadow-lg" on:click={entrar}>Entrar</button>
-	</div>
+		<input type="password" name="password" class="input" bind:value={password} />
+		<button class="btn variant-glass-secondary shadow-lg">Entrar</button>
+		<button class="btn variant-glass-tertiary shadow-lg" formaction="/auth?/register">Register</button>
+	</form>
 </main>

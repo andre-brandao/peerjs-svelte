@@ -42,6 +42,7 @@
     "@supabase/ssr": "^0.0.10",
     "@supabase/supabase-js": "^2.39.0",
     "lucide-svelte": "^0.291.0",
-    "peerjs": "^1.5.1"
+    "peerjs": "^1.5.1",
+    "qrious": "^4.0.2"
   }
 }

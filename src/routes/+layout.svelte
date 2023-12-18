@@ -1,21 +1,47 @@
 <script lang="ts">
 	import '../app.postcss';
-	import { AppShell, AppBar } from '@skeletonlabs/skeleton';
+	import { AppShell, AppBar, Drawer, Modal } from '@skeletonlabs/skeleton';
 
 	// Floating UI for Popups
-	import { computePosition, autoUpdate, flip, shift, offset, arrow } from '@floating-ui/dom';
+	import {
+		computePosition,
+		autoUpdate,
+		flip,
+		shift,
+		offset,
+		arrow
+	} from '@floating-ui/dom';
 	import { storePopup } from '@skeletonlabs/skeleton';
 	storePopup.set({ computePosition, autoUpdate, flip, shift, offset, arrow });
 
 	import type { LayoutData } from './$types';
 
 	export let data: LayoutData;
-	
+
 	let { supabase, session } = data;
 	$: ({ supabase, session } = data);
+
+	import { initializeStores } from '@skeletonlabs/skeleton';
+	import Mensagems from '$lib/Mensagems.svelte';
+
+	initializeStores();
+
+	import { getDrawerStore } from '@skeletonlabs/skeleton';
+
+	const drawerStore = getDrawerStore();
 </script>
 
-<!-- App Shell -->
+<Modal />
+<Drawer>
+	{#if $drawerStore.id === 'msgs' && session}
+		<Mensagems
+			roomId={$drawerStore.meta.roomId}
+			userId={$drawerStore.meta.userId}
+			{supabase}
+		/>
+	{/if}
+</Drawer>
+
 <AppShell>
 	<svelte:fragment slot="header">
 		<!-- App Bar -->
@@ -35,9 +61,14 @@
 
 				{#if session}
 					<div class="flex items-center h-fit">
-						{session?.user.email}
+						<a href="/autenticado">
+							{session?.user.email}
+						</a>
 						<form method="post" action="/auth?/logout">
-							<button class="h-fit px-2 ml-1 card variant-glass-error card-hover">Logout</button>
+							<button
+								class="h-fit px-2 ml-1 card variant-glass-error card-hover"
+								>Logout</button
+							>
 						</form>
 					</div>
 				{/if}

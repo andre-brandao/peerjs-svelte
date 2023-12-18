@@ -14,7 +14,7 @@
 		<thead>
 			<tr>
 				<th>Nome do user</th>
-				<th>Data Reuniao</th>
+				<th>Created</th>
 				<!-- <th>Created by</th> -->
 				<!-- <th>Weight</th> -->
 			</tr>

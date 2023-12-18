@@ -3,4 +3,5 @@
 
 	export let data: PageData;
 </script>
-<h1 class="h1">hello</h1>
+
+<h1 class="h1 text-center">Bem vindo!!</h1>

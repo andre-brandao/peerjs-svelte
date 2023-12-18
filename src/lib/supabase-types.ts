@@ -35,6 +35,38 @@ export interface Database {
           }
         ]
       }
+      mensagem: {
+        Row: {
+          created_at: string
+          created_by: string
+          id: number
+          reuniao: number
+          text: string
+        }
+        Insert: {
+          created_at?: string
+          created_by: string
+          id?: number
+          reuniao: number
+          text: string
+        }
+        Update: {
+          created_at?: string
+          created_by?: string
+          id?: number
+          reuniao?: number
+          text?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "mensagem_reuniao_fkey"
+            columns: ["reuniao"]
+            isOneToOne: false
+            referencedRelation: "reuniao"
+            referencedColumns: ["id"]
+          }
+        ]
+      }
       participantes: {
         Row: {
           created_at: string
