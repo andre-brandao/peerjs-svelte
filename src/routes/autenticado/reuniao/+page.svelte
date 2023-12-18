@@ -44,7 +44,7 @@
 				<tr
 					class="cursor-pointer"
 					on:click={() => {
-						goto(`/${row.id}/${session?.user.email}`);
+						goto(`/${row.id}/${session?.user.email?.split('@')[0]}`);
 					}}
 				>
 					<td>{row.nome}</td>
